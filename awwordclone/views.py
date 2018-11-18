@@ -18,21 +18,21 @@ def project(request,project_id):
     except ObjectDoesNotExist:
         raise Http404()
     return render(request,'project-detail.html',{'project':project})
-#
-# @login_required(login_url='/accounts/login/')
-# def new_project(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = ProjectForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             project = form.save(commit=False)
-#             project.profile = current_user
-#             project.save()
-#         return redirect('indexPage')
-#
-#     else:
-#         form = ProjectForm()
-#     return render(request, 'new_project.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.profile = current_user
+            project.save()
+        return redirect('indexPage')
+
+    else:
+        form = ProjectForm()
+    return render(request, 'new_project.html', {"form": form})
 #
 # def profile(request):
 #     current_user = request.user
