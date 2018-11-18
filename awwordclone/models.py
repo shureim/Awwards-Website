@@ -16,11 +16,11 @@ class Project(models.Model):
 
     def delete_project(self):
         self.delete()
-#
-#     @classmethod
-#     def get_all(cls):
-#         projects = cls.objects.all()
-#         return projects
+
+    @classmethod
+    def get_all(cls):
+        projects = cls.objects.all()
+        return projects
 #
 #     @classmethod
 #     def get_project(cls, project_id):
