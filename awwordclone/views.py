@@ -60,19 +60,19 @@ def create_profile(request):
     else:
         form = ProfileForm()
     return render(request,'create_profile.html',{'form':form})
-#
-# def search_results(request):
-#
-#     if 'project' in request.GET and request.GET["project"]:
-#         search_term = request.GET.get("project")
-#         searched_projects = Project.search_by_title(search_term)
-#         message = f"{search_term}"
-#
-#         return render(request, 'search.html',{"message":message,"projects": searched_projects})
-#
-#     else:
-#         message = "You haven't searched for any term"
-#         return render(request, 'search.html',{"message":message})
+
+def search_results(request):
+
+    if 'project' in request.GET and request.GET["project"]:
+        search_term = request.GET.get("project")
+        searched_projects = Project.search_by_title(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"projects": searched_projects})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
 #
 # def search_project(request,project_id):
 #     try :
