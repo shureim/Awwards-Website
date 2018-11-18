@@ -26,11 +26,11 @@ class Project(models.Model):
     def get_project(cls, project_id):
         project = cls.objects.get(id=project_id)
         return project
-#
-#     @classmethod
-#     def search_by_title(cls,search_term):
-#         projects_title = cls.objects.filter(title__icontains=search_term)
-#         return projects_title
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        projects_title = cls.objects.filter(title__icontains=search_term)
+        return projects_title
 #
 # class Profile(models.Model):
 #     photo = models.ImageField(upload_to = 'profile/')
