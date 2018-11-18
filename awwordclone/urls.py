@@ -10,7 +10,7 @@ urlpatterns=[
     url(r'^profile/',views.profile,name = 'Profile'),
     url(r'^create-profile/$',views.create_profile,name = 'create-profile'),
     url(r'^search/', views.search_results, name='search_results'),
-    # url(r'^project-detail/(\d+)',views.search_project,name = 'project-detail'),
+    url(r'^project-detail/(\d+)',views.search_project,name = 'project-detail'),
 
 
 ]
