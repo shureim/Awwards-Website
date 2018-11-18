@@ -21,11 +21,11 @@ class Project(models.Model):
     def get_all(cls):
         projects = cls.objects.all()
         return projects
-#
-#     @classmethod
-#     def get_project(cls, project_id):
-#         project = cls.objects.get(id=project_id)
-#         return project
+
+    @classmethod
+    def get_project(cls, project_id):
+        project = cls.objects.get(id=project_id)
+        return project
 #
 #     @classmethod
 #     def search_by_title(cls,search_term):
