@@ -34,12 +34,14 @@ INSTALLED_APPS = [
     'tinymce',
     'bootstrap3',
     'awwordclone.apps.AwwordcloneConfig',
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
 
 ]
 
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'awwords.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'my_django_project/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
